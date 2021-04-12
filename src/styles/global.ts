@@ -8,6 +8,10 @@ export const GlobalStyle = createGlobalStyle`
     --orange: #F1B147;
     --violet: #A769B2;
     --green: #35E4BD;
+    --btn-green: #28DD91;
+
+    --gray-100: #DADADA;
+    --gray-300: #9B9B9B;
   }
 
   * {
@@ -40,6 +44,7 @@ export const GlobalStyle = createGlobalStyle`
 
   button {
     cursor: pointer;
+    border: 0;
   }
 
   [disabled] {

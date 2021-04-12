@@ -1,11 +1,4 @@
-import {
-  useEffect,
-  useState,
-  ReactNode,
-  useContext,
-  Context,
-  createContext,
-} from "react";
+import { useState, ReactNode, useContext, Context, createContext } from "react";
 
 interface MenuProviderProps {
   children: ReactNode;
@@ -22,14 +15,6 @@ const OpenMenuContext: Context<MenuContextData> = createContext(
 
 export function OpenMenuProvider({ children }: MenuProviderProps) {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
-
-  const handleMenuOpen = () => setIsOpenMenu(true);
-
-  useEffect(() => {
-    window.addEventListener("onclick", handleMenuOpen);
-
-    return () => window.removeEventListener("onclick", handleMenuOpen);
-  }, []);
 
   function handleShowMenu() {
     setIsOpenMenu(!isOpenMenu);

@@ -3,10 +3,8 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  /* justify-content: flex-start; */
-  /* align-items: flex-start; */
 
-  /* transform: translateX(-100%); */
+  /* transform: translateX(0); */
 
   background: var(--cyan);
 
@@ -14,12 +12,10 @@ export const Container = styled.div`
   width: 100%;
   text-align: left;
 
-  /* margin-top: 0.05rem; */
-
-  padding: 0.85rem;
+  padding: 3rem 0.85rem;
 
   position: absolute;
-  /* top: 0; */
+  z-index: 99999;
   left: 0;
 
   transition: transform 0.3s ease-in-out;
@@ -29,8 +25,8 @@ export const Container = styled.div`
   }
 
   a {
-    font-size: 1.24rem;
-    font-weight: normal;
+    font-size: 1.5rem;
+    font-weight: 600;
 
     padding: 2rem 0;
 

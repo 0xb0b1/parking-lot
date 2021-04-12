@@ -6,7 +6,9 @@ function Menu() {
 
   return (
     <Container
-      style={{ transform: isOpenMenu ? "translateX(0)" : "translateX(-100%)" }}
+      style={{
+        transform: isOpenMenu ? "translateX(0)" : "translateX(-100%)",
+      }}
     >
       <a href="/entradas">
         <span>Entrada</span>

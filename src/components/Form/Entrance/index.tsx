@@ -11,6 +11,7 @@ function Entrance() {
         Número da placa:
         <input
           type="text"
+          max="8"
           pattern="^([A-Z]{3})-[0-9]{4}$"
           placeholder="AAA-0000"
           value={plateNumber}

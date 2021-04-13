@@ -23,11 +23,11 @@ export function ValidateInputProvider({ children }: ValidationProviderProps) {
   const [plateNumber, setPlateNumber] = useState<string>("");
 
   useEffect(() => {
-    const regTest = new RegExp("^([A-Z]{3})-[0-9]{4}$");
+    const regTest = new RegExp("^([A-Za-z]{3})-[0-9]{4}$");
     regTest.test(plateNumber) ? setIsFormValid(true) : setIsFormValid(false);
   }, [plateNumber]);
 
-  async function handleSetPlateNumber(event: string) {
+  function handleSetPlateNumber(event: string) {
     setPlateNumber(event);
   }
 

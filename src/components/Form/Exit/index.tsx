@@ -10,7 +10,8 @@ function Exit() {
         Número da placa:
         <input
           type="text"
-          pattern="^([A-Z]{3})-[0-9]{4}$"
+          max="8"
+          pattern="^([A-Za-z]{3})-[0-9]{4}$"
           placeholder="AAA-0000"
           value={plateNumber}
           onChange={(event) => handleSetPlateNumber(event.target.value)}

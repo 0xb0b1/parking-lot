@@ -1,5 +1,6 @@
+import { useEffect } from "react";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 
 import { Container, Buttons, InputButton, Form, HistoryButton } from "./styles";
 
@@ -11,9 +12,19 @@ function Entrance() {
   // const { handleSubmit } = useForm<FormProps>();
   // const onSubmit = (data: FormProps) => console.log(data);
 
+  // the input button type
   const [inputType, setInputType] = useState("entrada");
 
-  const [isFormValid, setIsFormValid] = useState(true);
+  // hook to save the form valid status
+  const [isFormValid, setIsFormValid] = useState(false);
+
+  // save the plate number
+  const [plateNumber, setPlateNumber] = useState("");
+
+  useEffect(() => {
+    const regTest = new RegExp("^([A-Z]{3})-[0-9]{4}$");
+    regTest.test(plateNumber) ? setIsFormValid(true) : setIsFormValid(false);
+  }, [plateNumber]);
 
   return (
     <Container>
@@ -41,6 +52,8 @@ function Entrance() {
               type="text"
               pattern="^([A-Z]{3})-[0-9]{4}$"
               placeholder="AAA-0000"
+              value={plateNumber}
+              onChange={(event) => setPlateNumber(event.target.value)}
             />
           </label>
           <button className={isFormValid ? "active" : ""}>
@@ -55,6 +68,8 @@ function Entrance() {
               type="text"
               pattern="^([A-Z]{3})-[0-9]{4}$"
               placeholder="AAA-0000"
+              value={plateNumber}
+              onChange={(event) => setPlateNumber(event.target.value)}
             />
           </label>
           <button className={isFormValid ? "pagamento" : ""}>PAGAMENTO</button>

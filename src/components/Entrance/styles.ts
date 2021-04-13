@@ -27,9 +27,9 @@ export const InputButton = styled.button<InputButtonProps>`
   color: ${(props) => (props.isActive ? `var(--cyan)` : `var(--gray-300)`)};
 `;
 
-interface FormProps {
-  isFormValid: boolean;
-}
+// interface FormProps {
+//   isFormValid: boolean;
+// }
 
 export const Form = styled.form`
   display: flex;

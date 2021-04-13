@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { useForm, useWatch } from "react-hook-form";
 
 import { Container, Buttons, InputButton, Form, HistoryButton } from "./styles";
 
@@ -9,9 +8,6 @@ import { Container, Buttons, InputButton, Form, HistoryButton } from "./styles";
 // }
 
 function Entrance() {
-  // const { handleSubmit } = useForm<FormProps>();
-  // const onSubmit = (data: FormProps) => console.log(data);
-
   // the input button type
   const [inputType, setInputType] = useState("entrada");
 
@@ -56,7 +52,10 @@ function Entrance() {
               onChange={(event) => setPlateNumber(event.target.value)}
             />
           </label>
-          <button className={isFormValid ? "active" : ""}>
+          <button
+            type="button"
+            className={isFormValid ? "entrada active" : "entrada disabled"}
+          >
             CONFIRMAR ENTRADA
           </button>
         </Form>
@@ -72,18 +71,24 @@ function Entrance() {
               onChange={(event) => setPlateNumber(event.target.value)}
             />
           </label>
-          <button className={isFormValid ? "pagamento" : ""}>PAGAMENTO</button>
           <button
+            type="button"
+            className={isFormValid ? "pagamento" : "disabled"}
+          >
+            PAGAMENTO
+          </button>
+          <button
+            type="button"
             className="saida"
             style={{ border: isFormValid ? "2px solid #A769B2" : "" }}
           >
             SAÍDA
           </button>
+          <HistoryButton>
+            <span>Ver Historico</span>
+          </HistoryButton>
         </Form>
       )}
-      <HistoryButton>
-        <span>Ver Historico</span>
-      </HistoryButton>
     </Container>
   );
 }

@@ -74,18 +74,25 @@ export const Form = styled.form`
   button {
     margin: 0 1rem;
     height: 4.15rem;
+    border-radius: 0.45rem;
 
     font-weight: 600;
     font-style: normal;
 
-    border-radius: 0.45rem;
-
     color: var(--gray-300);
     background: var(--gray-100);
+
+    &.entrada {
+      margin-bottom: 3rem;
+    }
 
     &.active {
       color: var(--white);
       background: var(--btn-green);
+    }
+
+    &.disabled {
+      cursor: not-allowed;
     }
 
     &.pagamento {
@@ -105,6 +112,8 @@ export const Form = styled.form`
 export const HistoryButton = styled.div`
   color: #00bcd4;
   padding: 2rem 1rem;
+
+  margin: 0 auto;
 
   cursor: pointer;
 

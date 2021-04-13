@@ -3,17 +3,17 @@ import { useForm } from "react-hook-form";
 
 import { Container, Buttons, InputButton, Form, HistoryButton } from "./styles";
 
-interface FormProps {
-  handleSubmit: () => void;
-}
+// interface FormProps {
+//   handleSubmit: () => void;
+// }
 
 function Entrance() {
-  const { handleSubmit } = useForm<FormProps>();
-  const onSubmit = (data: FormProps) => console.log(data);
+  // const { handleSubmit } = useForm<FormProps>();
+  // const onSubmit = (data: FormProps) => console.log(data);
 
   const [inputType, setInputType] = useState("entrada");
 
-  // const [isActiveButton, setIsActiveButton] = useState(false);
+  const [isFormValid, setIsFormValid] = useState(true);
 
   return (
     <Container>
@@ -34,7 +34,7 @@ function Entrance() {
         </InputButton>
       </Buttons>
       {inputType === "entrada" ? (
-        <Form onSubmit={handleSubmit(onSubmit)}>
+        <Form>
           <label>
             Número da placa:
             <input
@@ -42,11 +42,13 @@ function Entrance() {
               pattern="^([A-Z]{3})-[0-9]{4}$"
               placeholder="AAA-0000"
             />
-            <button>CONFIRMAR ENTRADA</button>
           </label>
+          <button className={isFormValid ? "active" : ""}>
+            CONFIRMAR ENTRADA
+          </button>
         </Form>
       ) : (
-        <Form onSubmit={handleSubmit(onSubmit)}>
+        <Form>
           <label>
             Número da placa:
             <input
@@ -54,9 +56,14 @@ function Entrance() {
               pattern="^([A-Z]{3})-[0-9]{4}$"
               placeholder="AAA-0000"
             />
-            <button className="">PAGAMENTO</button>
-            <button className="saida">SAÍDA</button>
           </label>
+          <button className={isFormValid ? "pagamento" : ""}>PAGAMENTO</button>
+          <button
+            className="saida"
+            style={{ border: isFormValid ? "2px solid #A769B2" : "" }}
+          >
+            SAÍDA
+          </button>
         </Form>
       )}
       <HistoryButton>

@@ -27,6 +27,10 @@ export const InputButton = styled.button<InputButtonProps>`
   color: ${(props) => (props.isActive ? `var(--cyan)` : `var(--gray-300)`)};
 `;
 
+interface FormProps {
+  isFormValid: boolean;
+}
+
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
@@ -38,11 +42,13 @@ export const Form = styled.form`
   label {
     display: flex;
     flex-direction: column;
+
     margin: 2rem 1rem;
 
-    color: var(--gray-300);
-
+    font-size: 0.87rem;
     font-weight: 600;
+
+    color: var(--gray-300);
 
     input {
       height: 4.15rem;
@@ -63,32 +69,42 @@ export const Form = styled.form`
         color: var(--gray-300);
       }
     }
+  }
 
-    button {
-      margin-top: 1rem;
-      height: 4.15rem;
+  button {
+    margin: 0 1rem;
+    height: 4.15rem;
 
-      border-radius: 0.45rem;
+    font-weight: 600;
+    font-style: normal;
 
-      color: var(--gray-300);
-      background: var(--gray-100);
+    border-radius: 0.45rem;
 
-      &.active {
-        color: var(--white);
-        background: var(--btn-green);
-      }
+    color: var(--gray-300);
+    background: var(--gray-100);
 
-      &.saida {
-        background: var(--white);
-        border: 1px solid #dadada;
-      }
+    &.active {
+      color: var(--white);
+      background: var(--btn-green);
+    }
+
+    &.pagamento {
+      color: var(--white);
+      background: var(--violet);
+    }
+
+    &.saida {
+      background: var(--white);
+      border: 1px solid #dadada;
+
+      margin-top: 2rem;
     }
   }
 `;
 
 export const HistoryButton = styled.div`
   color: #00bcd4;
-  padding-bottom: 1rem;
+  padding: 2rem 1rem;
 
   cursor: pointer;
 

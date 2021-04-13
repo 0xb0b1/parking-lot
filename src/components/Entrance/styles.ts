@@ -4,7 +4,7 @@ export const Container = styled.div`
   margin: 1rem;
   background: var(--white);
 
-  border-radius: 0.45rem;
+  /* border-radius: 0.45rem; */
 `;
 
 export const Buttons = styled.div`

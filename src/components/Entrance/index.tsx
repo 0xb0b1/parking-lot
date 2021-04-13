@@ -37,7 +37,11 @@ function Entrance() {
         <Form onSubmit={handleSubmit(onSubmit)}>
           <label>
             Número da placa:
-            <input type="text" placeholder="AAA-0000" />
+            <input
+              type="text"
+              pattern="^([A-Z]{3})-[0-9]{4}$"
+              placeholder="AAA-0000"
+            />
             <button>CONFIRMAR ENTRADA</button>
           </label>
         </Form>
@@ -45,7 +49,11 @@ function Entrance() {
         <Form onSubmit={handleSubmit(onSubmit)}>
           <label>
             Número da placa:
-            <input type="text" pattern="" placeholder="AAA-0000" />
+            <input
+              type="text"
+              pattern="^([A-Z]{3})-[0-9]{4}$"
+              placeholder="AAA-0000"
+            />
             <button className="">PAGAMENTO</button>
             <button className="saida">SAÍDA</button>
           </label>

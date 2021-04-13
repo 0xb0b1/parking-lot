@@ -12,7 +12,7 @@ export const Container = styled.div`
   width: 100%;
   text-align: left;
 
-  padding: 3rem 0.85rem;
+  padding: 2rem 1.15rem;
 
   position: absolute;
   z-index: 99999;
@@ -25,10 +25,10 @@ export const Container = styled.div`
   }
 
   a {
-    font-size: 1.5rem;
+    font-size: 1.15rem;
     font-weight: 600;
 
-    padding: 2rem 0;
+    padding: 1.25rem 0;
 
     color: #fff;
     text-decoration: none;

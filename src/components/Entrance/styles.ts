@@ -42,6 +42,8 @@ export const Form = styled.form`
 
     color: var(--gray-300);
 
+    font-weight: 600;
+
     input {
       height: 4.15rem;
       text-align: center;

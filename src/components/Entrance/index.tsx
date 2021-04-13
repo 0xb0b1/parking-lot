@@ -4,16 +4,16 @@ import { useForm } from "react-hook-form";
 import { Container, Buttons, InputButton, Form, HistoryButton } from "./styles";
 
 interface FormProps {
-  value: string;
+  handleSubmit: () => void;
 }
 
 function Entrance() {
   const { handleSubmit } = useForm<FormProps>();
   const onSubmit = (data: FormProps) => console.log(data);
 
-  const [inputType, setInputType] = useState("saida");
+  const [inputType, setInputType] = useState("entrada");
 
-  const [isActiveButton, setIsActiveButton] = useState(false);
+  // const [isActiveButton, setIsActiveButton] = useState(false);
 
   return (
     <Container>
@@ -37,8 +37,8 @@ function Entrance() {
         <Form onSubmit={handleSubmit(onSubmit)}>
           <label>
             Número da placa:
-            <input type="text" pattern="" placeholder="AAA-0000" />
-            <button className="">CONFIRMAR ENTRADA</button>
+            <input type="text" placeholder="AAA-0000" />
+            <button>CONFIRMAR ENTRADA</button>
           </label>
         </Form>
       ) : (

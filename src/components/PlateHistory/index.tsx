@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import { useValidateInput } from "../../hooks/useValidateInput";
 import { api } from "../../services/api";
-import { Container } from "./styles";
+
+import { Container, Header } from "./styles";
+
+import BackIcon from "../../images/Shape.png";
 
 interface PlateProps {
   plate: Array<{
@@ -13,20 +16,27 @@ interface PlateProps {
   }>;
 }
 
-function PlateHistory() {
+interface IProps {
+  LeaveHistory: () => void;
+}
+
+function PlateHistory({ LeaveHistory }: IProps) {
   const { plateNumber } = useValidateInput();
 
-  const [plate, setPlate] = useState<PlateProps[]>([]);
+  // const [plate, setPlate] = useState<PlateProps[]>([]);
 
-  useEffect(() => {
-    const request = api.get(`${plateNumber}`);
-    // setPlate(request);
-    console.log(request);
-  }, []);
+  // useEffect(() => {
+  //   const request = api.get(`${plateNumber}`);
+  //   // setPlate(request);
+  //   console.log(request);
+  // }, []);
 
   return (
     <Container>
-      <h1>PlateHistory</h1>
+      <Header>
+        <img onClick={LeaveHistory} src={BackIcon} alt="Go Back Arrow" />
+        <span>Placa {plateNumber}</span>
+      </Header>
     </Container>
   );
 }

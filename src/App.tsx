@@ -44,6 +44,10 @@ function App() {
     setIsHistoryOpen(true);
   }
 
+  function handleCloseHistory() {
+    setIsHistoryOpen(false);
+  }
+
   return (
     <OpenMenuProvider>
       <PaymentProvider>
@@ -51,7 +55,7 @@ function App() {
         <NavBar />
         <Menu />
         {isHistoryOpen ? (
-          <PlateHistory />
+          <PlateHistory LeaveHistory={handleCloseHistory} />
         ) : (
           <DataInput
             onOpenCheckoutModal={handleOpenCheckoutModal}

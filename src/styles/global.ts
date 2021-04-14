@@ -70,9 +70,11 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     max-width: 576px;
     background: var(--background);
-    padding: 3rem;
+    padding: 2rem;
     position: relative;
     border-radius: 0.25rem;
+
+    opacity: 0.95;
 
     margin: 0.65rem;
   }

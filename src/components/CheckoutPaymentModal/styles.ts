@@ -9,20 +9,21 @@ export const Container = styled.form`
   span {
     text-align: center;
     margin-bottom: 0.45rem;
+    font-size: 1rem;
   }
 
   h3 {
-    font-size: 2rem;
+    font-size: 2.375rem;
     font-weight: 400;
     color: var(--cyan);
   }
 `;
 
 export const ConfirmButton = styled.button`
-  margin: 1rem 0;
-  height: 4.15rem;
+  margin: 1.4rem 0;
+  height: 4.12rem;
   width: 100%;
-  border-radius: 0.45rem;
+  border-radius: 0.25rem;
 
   font-weight: 600;
   font-style: normal;

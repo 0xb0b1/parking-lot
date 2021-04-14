@@ -9,7 +9,7 @@ export const Container = styled.div`
 
 export const Buttons = styled.div`
   display: flex;
-  border-radius: 0.45rem;
+  border-radius: 0.25rem;
 `;
 
 interface InputButtonProps {

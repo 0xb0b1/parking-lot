@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { useState } from "react";
+import { useValidateInput } from "../../hooks/useValidateInput";
 
 import Entrance from "../Form/Entrance";
 import Exit from "../Form/Exit";
@@ -12,6 +13,8 @@ interface DataInputProps {
 function DataInput({ onOpenCheckoutModal }: DataInputProps) {
   // the input button type
   const [inputType, setInputType] = useState("entrada");
+
+  const { isFormValid } = useValidateInput();
 
   return (
     <Container>

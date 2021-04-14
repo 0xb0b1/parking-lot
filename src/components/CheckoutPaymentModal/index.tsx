@@ -15,6 +15,7 @@ function CheckoutPaymentModal({
   onRequestClose,
 }: CheckoutPaymentModalProps) {
   const [paymentCompleted, setPaymentCompleted] = useState(false);
+
   const { plateNumber } = useValidateInput();
 
   async function handlePayment(event: FormEvent) {
@@ -35,8 +36,8 @@ function CheckoutPaymentModal({
       <Container>
         <span>Confirmar pagamento do placa abaixo?</span>
         <h3>{plateNumber}</h3>
-        <ConfirmButton>CONFIRMAR</ConfirmButton>
-        <ExitButton>VOLTAR</ExitButton>
+        <ConfirmButton type="button">CONFIRMAR</ConfirmButton>
+        <ExitButton type="button">VOLTAR</ExitButton>
       </Container>
     </Modal>
   );

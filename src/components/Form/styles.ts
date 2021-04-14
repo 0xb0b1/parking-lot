@@ -43,7 +43,7 @@ export const Form = styled.form`
   button {
     margin: 0 1rem;
     height: 4.15rem;
-    border-radius: 0.45rem;
+    border-radius: 0.25rem;
 
     font-weight: 600;
     font-style: normal;

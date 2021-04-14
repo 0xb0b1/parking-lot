@@ -16,7 +16,9 @@ function CheckoutPaymentModal({
 }: CheckoutPaymentModalProps) {
   const [paymentCompleted, setPaymentCompleted] = useState(false);
 
-  const { plateNumber } = useValidateInput();
+  const { plateNumber, isFormValid } = useValidateInput();
+
+  // const [confirmPayment, setConfirmPayment] = useState(false);
 
   async function handlePayment(event: FormEvent) {
     event.preventDefault();
@@ -27,19 +29,27 @@ function CheckoutPaymentModal({
   }
 
   return (
-    <Modal
-      isOpen={isOpen}
-      onRequestClose={onRequestClose}
-      overlayClassName="react-modal-overlay"
-      className="react-modal-content"
-    >
-      <Container>
-        <span>Confirmar pagamento do placa abaixo?</span>
-        <h3>{plateNumber}</h3>
-        <ConfirmButton type="button">CONFIRMAR</ConfirmButton>
-        <ExitButton type="button">VOLTAR</ExitButton>
-      </Container>
-    </Modal>
+    <>
+      {/* {isFormValid && ( */}
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={onRequestClose}
+        overlayClassName="react-modal-overlay"
+        className="react-modal-content"
+      >
+        <Container>
+          <span>Confirmar pagamento do placa abaixo?</span>
+          <h3>{plateNumber}</h3>
+          <ConfirmButton onClick={handlePayment} type="button">
+            CONFIRMAR
+          </ConfirmButton>
+          <ExitButton onClick={onRequestClose} type="button">
+            VOLTAR
+          </ExitButton>
+        </Container>
+      </Modal>
+      {/* )} */}
+    </>
   );
 }
 

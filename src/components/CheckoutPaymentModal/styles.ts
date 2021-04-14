@@ -10,6 +10,8 @@ export const Container = styled.form`
     text-align: center;
     margin-bottom: 0.45rem;
     font-size: 1rem;
+
+    width: 196px;
   }
 
   h3 {
@@ -20,9 +22,11 @@ export const Container = styled.form`
 `;
 
 export const ConfirmButton = styled.button`
-  margin: 1.4rem 0;
+  margin-top: 1.4rem;
+
   height: 4.12rem;
   width: 100%;
+
   border-radius: 0.25rem;
 
   font-weight: 600;

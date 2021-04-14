@@ -6,9 +6,9 @@ import Modal from "react-modal";
 
 import { GlobalStyle } from "./styles/global";
 import { OpenMenuProvider } from "./hooks/useOpenMenu";
-import { ValidateInputProvider } from "./hooks/useValidateInput";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import CheckoutPaymentModal from "./components/CheckoutPaymentModal";
+import { useValidateInput } from "./hooks/useValidateInput";
 
 // import { api } from "./services/api";
 
@@ -18,8 +18,14 @@ function App() {
   // hooks to open the modal
   const [isNewCheckoutModalOpen, setIsNewCheckoutModalOpen] = useState(false);
 
+  const { isFormValid } = useValidateInput();
+
   function handleOpenCheckoutModal() {
-    setIsNewCheckoutModalOpen(true);
+    if (isFormValid) {
+      setIsNewCheckoutModalOpen(true);
+    }
+
+    return;
   }
 
   function handleCloseCheckoutModal() {
@@ -28,16 +34,14 @@ function App() {
 
   return (
     <OpenMenuProvider>
-      <ValidateInputProvider>
-        <GlobalStyle />
-        <NavBar />
-        <Menu />
-        <DataInput onOpenCheckoutModal={handleOpenCheckoutModal} />
-        <CheckoutPaymentModal
-          isOpen={isNewCheckoutModalOpen}
-          onRequestClose={handleCloseCheckoutModal}
-        />
-      </ValidateInputProvider>
+      <GlobalStyle />
+      <NavBar />
+      <Menu />
+      <DataInput onOpenCheckoutModal={handleOpenCheckoutModal} />
+      <CheckoutPaymentModal
+        isOpen={isNewCheckoutModalOpen}
+        onRequestClose={handleCloseCheckoutModal}
+      />
     </OpenMenuProvider>
   );
 }

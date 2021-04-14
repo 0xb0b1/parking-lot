@@ -6,9 +6,10 @@ import Exit from "../Form/Exit";
 import { Container, Buttons, InputButton } from "./styles";
 interface DataInputProps {
   onOpenCheckoutModal: () => void;
+  onShowHistory: () => void;
 }
 
-function DataInput({ onOpenCheckoutModal }: DataInputProps) {
+function DataInput({ onOpenCheckoutModal, onShowHistory }: DataInputProps) {
   // the input button type
   const [inputType, setInputType] = useState("entrada");
 
@@ -33,7 +34,10 @@ function DataInput({ onOpenCheckoutModal }: DataInputProps) {
       {inputType === "entrada" ? (
         <Entrance />
       ) : (
-        <Exit checkoutPayment={onOpenCheckoutModal} />
+        <Exit
+          checkoutPayment={onOpenCheckoutModal}
+          showHistory={onShowHistory}
+        />
       )}
     </Container>
   );

@@ -14,6 +14,7 @@ import { useValidateInput } from "./hooks/useValidateInput";
 import { PaymentProvider } from "./hooks/usePayment";
 
 import { GlobalStyle } from "./styles/global";
+import PlateHistory from "./components/PlateHistory";
 // import { api } from "./services/api";
 
 Modal.setAppElement("#root");
@@ -21,6 +22,8 @@ Modal.setAppElement("#root");
 function App() {
   // hooks to open the modal
   const [isNewCheckoutModalOpen, setIsNewCheckoutModalOpen] = useState(false);
+
+  const [isHistoryOpen, setIsHistoryOpen] = useState(false);
 
   const { isFormValid } = useValidateInput();
 
@@ -37,13 +40,24 @@ function App() {
     setIsNewCheckoutModalOpen(false);
   }
 
+  function handleHistory() {
+    setIsHistoryOpen(true);
+  }
+
   return (
     <OpenMenuProvider>
       <PaymentProvider>
         <GlobalStyle />
         <NavBar />
         <Menu />
-        <DataInput onOpenCheckoutModal={handleOpenCheckoutModal} />
+        {isHistoryOpen ? (
+          <PlateHistory />
+        ) : (
+          <DataInput
+            onOpenCheckoutModal={handleOpenCheckoutModal}
+            onShowHistory={handleHistory}
+          />
+        )}
         <CheckoutPaymentModal
           isOpen={isNewCheckoutModalOpen}
           onRequestClose={handleCloseCheckoutModal}

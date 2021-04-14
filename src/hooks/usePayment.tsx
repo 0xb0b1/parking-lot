@@ -25,7 +25,9 @@ export function PaymentProvider({ children }: PaymentProviderProps) {
 
   async function handlePayment(plate: string) {
     if (isFormValid) {
-      await api.get(`${plate}`).then((response) => console.log(response));
+      await api
+        .post(`${plate}/pay`, { paid: true })
+        .then((response) => console.log(response.statusText));
     }
 
     setIsPaymentComplete(true);

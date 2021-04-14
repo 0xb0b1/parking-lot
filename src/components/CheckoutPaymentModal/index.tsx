@@ -4,6 +4,7 @@ import { useValidateInput } from "../../hooks/useValidateInput";
 import Modal from "react-modal";
 
 import { Container, ConfirmButton, ExitButton } from "./styles";
+import { usePayment } from "../../hooks/usePayment";
 
 interface CheckoutPaymentModalProps {
   isOpen: boolean;
@@ -14,19 +15,21 @@ function CheckoutPaymentModal({
   isOpen,
   onRequestClose,
 }: CheckoutPaymentModalProps) {
-  const [paymentCompleted, setPaymentCompleted] = useState(false);
+  // const [paymentCompleted, setPaymentCompleted] = useState(false);
 
   const { plateNumber } = useValidateInput();
 
+  const { handlePayment } = usePayment();
+
   // const [confirmPayment, setConfirmPayment] = useState(false);
 
-  async function handlePayment(event: FormEvent) {
+  async function handleCompletePayment(event: FormEvent) {
     event.preventDefault();
 
     // payment logic goes here
-    console.log(paymentCompleted);
+    handlePayment(plateNumber);
 
-    setPaymentCompleted(false);
+    // setPaymentCompleted(false);
   }
 
   return (
@@ -40,7 +43,7 @@ function CheckoutPaymentModal({
         <Container>
           <span>Confirmar pagamento do placa abaixo?</span>
           <h3>{plateNumber}</h3>
-          <ConfirmButton onClick={handlePayment} type="button">
+          <ConfirmButton onClick={handleCompletePayment} type="button">
             CONFIRMAR
           </ConfirmButton>
           <ExitButton onClick={onRequestClose} type="button">

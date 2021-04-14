@@ -1,15 +1,19 @@
+import { useState } from "react";
+
 import NavBar from "./components/NavBar";
 import Menu from "./components/Menu";
 import DataInput from "./components/DataInput";
 
 import Modal from "react-modal";
 
-import { GlobalStyle } from "./styles/global";
-import { OpenMenuProvider } from "./hooks/useOpenMenu";
-import { useState } from "react";
 import CheckoutPaymentModal from "./components/CheckoutPaymentModal";
-import { useValidateInput } from "./hooks/useValidateInput";
 
+// context hooks
+import { OpenMenuProvider } from "./hooks/useOpenMenu";
+import { useValidateInput } from "./hooks/useValidateInput";
+import { PaymentProvider } from "./hooks/usePayment";
+
+import { GlobalStyle } from "./styles/global";
 // import { api } from "./services/api";
 
 Modal.setAppElement("#root");
@@ -21,6 +25,7 @@ function App() {
   const { isFormValid } = useValidateInput();
 
   function handleOpenCheckoutModal() {
+    // if the plate number is valid, we open de modal.
     if (isFormValid) {
       setIsNewCheckoutModalOpen(true);
     }
@@ -34,14 +39,16 @@ function App() {
 
   return (
     <OpenMenuProvider>
-      <GlobalStyle />
-      <NavBar />
-      <Menu />
-      <DataInput onOpenCheckoutModal={handleOpenCheckoutModal} />
-      <CheckoutPaymentModal
-        isOpen={isNewCheckoutModalOpen}
-        onRequestClose={handleCloseCheckoutModal}
-      />
+      <PaymentProvider>
+        <GlobalStyle />
+        <NavBar />
+        <Menu />
+        <DataInput onOpenCheckoutModal={handleOpenCheckoutModal} />
+        <CheckoutPaymentModal
+          isOpen={isNewCheckoutModalOpen}
+          onRequestClose={handleCloseCheckoutModal}
+        />
+      </PaymentProvider>
     </OpenMenuProvider>
   );
 }

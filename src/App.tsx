@@ -6,7 +6,7 @@ import Modal from "react-modal";
 
 import { GlobalStyle } from "./styles/global";
 import { OpenMenuProvider } from "./hooks/useOpenMenu";
-import { FormEvent, useState } from "react";
+import { useState } from "react";
 import CheckoutPaymentModal from "./components/CheckoutPaymentModal";
 import { useValidateInput } from "./hooks/useValidateInput";
 

@@ -16,7 +16,7 @@ function CheckoutPaymentModal({
 }: CheckoutPaymentModalProps) {
   const [paymentCompleted, setPaymentCompleted] = useState(false);
 
-  const { plateNumber, isFormValid } = useValidateInput();
+  const { plateNumber } = useValidateInput();
 
   // const [confirmPayment, setConfirmPayment] = useState(false);
 
@@ -24,13 +24,13 @@ function CheckoutPaymentModal({
     event.preventDefault();
 
     // payment logic goes here
+    console.log(paymentCompleted);
 
     setPaymentCompleted(false);
   }
 
   return (
     <>
-      {/* {isFormValid && ( */}
       <Modal
         isOpen={isOpen}
         onRequestClose={onRequestClose}
@@ -48,7 +48,6 @@ function CheckoutPaymentModal({
           </ExitButton>
         </Container>
       </Modal>
-      {/* )} */}
     </>
   );
 }

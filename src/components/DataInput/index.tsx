@@ -3,14 +3,13 @@ import { useState } from "react";
 
 import Entrance from "../Form/Entrance";
 import Exit from "../Form/Exit";
-
 import { Container, Buttons, InputButton } from "./styles";
 
-// interface FormProps {
-//   handleSubmit: () => void;
-// }
+interface DataInputProps {
+  onOpenCheckoutModal: () => void;
+}
 
-function DataInput() {
+function DataInput({ onOpenCheckoutModal }: DataInputProps) {
   // the input button type
   const [inputType, setInputType] = useState("entrada");
 
@@ -32,7 +31,11 @@ function DataInput() {
           Saída
         </InputButton>
       </Buttons>
-      {inputType === "entrada" ? <Entrance /> : <Exit />}
+      {inputType === "entrada" ? (
+        <Entrance />
+      ) : (
+        <Exit checkoutPayment={onOpenCheckoutModal} />
+      )}
     </Container>
   );
 }

@@ -1,7 +1,13 @@
 import { useValidateInput } from "../../../hooks/useValidateInput";
 import { Form, HistoryButton } from "../styles";
 
-function Exit() {
+import CheckoutPaymentModal from "../../CheckoutPaymentModal";
+
+interface ExitProps {
+  checkoutPayment: () => void;
+}
+
+function Exit({ checkoutPayment }: ExitProps) {
   const { plateNumber, isFormValid, handleSetPlateNumber } = useValidateInput();
 
   return (
@@ -17,7 +23,11 @@ function Exit() {
           onChange={(event) => handleSetPlateNumber(event.target.value)}
         />
       </label>
-      <button type="button" className={isFormValid ? "pagamento" : "disabled"}>
+      <button
+        onClick={checkoutPayment}
+        type="button"
+        className={isFormValid ? "pagamento" : "disabled"}
+      >
         PAGAMENTO
       </button>
       <button

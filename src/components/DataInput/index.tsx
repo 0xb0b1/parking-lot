@@ -24,9 +24,9 @@ function DataInput({ onOpenCheckoutModal }: DataInputProps) {
   // não consegui mostrar o historico como pedido no layout do figma.
   // onde os botoes de etrada e saida não aparecem.
   // Aqui o historico é mostrado na sessão da Saída, abaixo do botão;
-  async function handleShowHistory() {
+  function handleShowHistory() {
     if (isFormValid) {
-      await handleFetchData(plateNumber);
+      handleFetchData(plateNumber);
       setIsHistoryOpen(true);
     }
   }

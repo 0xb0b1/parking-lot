@@ -20,6 +20,7 @@ function Entrance() {
         />
       </label>
       <button
+        // onClick={}
         type="button"
         className={isFormValid ? "entrada active" : "entrada disabled"}
       >

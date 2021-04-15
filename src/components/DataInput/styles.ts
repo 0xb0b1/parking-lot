@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  margin: 1rem;
   background: var(--white);
 
-  /* border-radius: 0.45rem; */
+  width: 100%;
+  max-width: 420px;
+
+  margin: 2rem auto;
 `;
 
 export const Buttons = styled.div`

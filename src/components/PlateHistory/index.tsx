@@ -1,11 +1,15 @@
+import { useState } from "react";
+
 import { useValidateInput } from "../../hooks/useValidateInput";
 
-import { useHistory } from "../../hooks/useHistory";
+import RegisterDetail from "../RegisterDetail";
+
+import NotPaidItems from "./NotPaidItems";
+import PaidItems from "./PaidItems";
 
 import { Container, Header, Content } from "./styles";
 
 import BackIcon from "../../images/Shape.png";
-import NotPaidIcon from "../../images/icons/notpaid.svg";
 
 interface IProps {
   LeaveHistory: () => void;
@@ -14,44 +18,36 @@ interface IProps {
 function PlateHistory({ LeaveHistory }: IProps) {
   const { plateNumber } = useValidateInput();
 
-  const { plate } = useHistory();
+  const [isRegisterDetailOpen, setIsRegisterDetailOpen] = useState(false);
+
+  function handleShowRegisterDetail() {
+    setIsRegisterDetailOpen(true);
+  }
+
+  function handleCloseRegisterDetail() {
+    setIsRegisterDetailOpen(false);
+  }
 
   return (
     <Container>
-      <Header>
-        <img onClick={LeaveHistory} src={BackIcon} alt="Go Back Arrow" />
-        <span>Placa {plateNumber}</span>
-      </Header>
-      <Content>
-        {plate
-          .filter((paid) => paid.paid !== true)
-          .map((item) => (
-            <div className="box" onClick={() => console.log(item.time)}>
-              <div className="time">
-                <span>TEMPO ATUAL</span>
-                <span>{item.time}</span>
-              </div>
-              <div className="payment">
-                <span>PAGAMENTO</span>
-                <img src={NotPaidIcon} alt="not paid" />
-              </div>
-            </div>
-          ))}
-        {plate
-          .filter((paid) => paid.paid === true)
-          .map((item) => (
-            <div className="box" onClick={() => console.log(item.time)}>
-              <div className="time">
-                <span>TEMPO TOTAL</span>
-                <span>{item.time}</span>
-              </div>
-              <div className="payment">
-                <span>PAGAMENTO</span>
-                <span>Pago</span>
-              </div>
-            </div>
-          ))}
-      </Content>
+      {isRegisterDetailOpen ? (
+        <RegisterDetail
+          plate=""
+          status=""
+          time=""
+          paid=""
+          leaveRegister={handleCloseRegisterDetail}
+        />
+      ) : (
+        <Content>
+          <Header>
+            <img onClick={LeaveHistory} src={BackIcon} alt="Go Back Arrow" />
+            <span>Placa {plateNumber}</span>
+          </Header>
+          <NotPaidItems showRegisterDetail={handleShowRegisterDetail} />
+          <PaidItems showRegisterDetail={handleShowRegisterDetail} />
+        </Content>
+      )}
     </Container>
   );
 }

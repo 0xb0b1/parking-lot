@@ -2,13 +2,12 @@
 import { useState } from "react";
 import { useHistory } from "../../hooks/useHistory";
 import { useValidateInput } from "../../hooks/useValidateInput";
-// import { useHistory } from "../../hooks/useHistory";
-// import { useValidateInput } from "../../hooks/useValidateInput";
 
 import Entrance from "../Form/Entrance";
 import Exit from "../Form/Exit";
 import PlateHistory from "../PlateHistory";
 import { Container, Buttons, InputButton } from "./styles";
+
 interface DataInputProps {
   onOpenCheckoutModal: () => void;
 }

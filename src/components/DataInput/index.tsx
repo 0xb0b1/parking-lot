@@ -1,5 +1,6 @@
 // import { useEffect } from "react";
 import { useState } from "react";
+import { useHistory } from "../../hooks/useHistory";
 import { useValidateInput } from "../../hooks/useValidateInput";
 // import { useHistory } from "../../hooks/useHistory";
 // import { useValidateInput } from "../../hooks/useValidateInput";
@@ -17,11 +18,16 @@ function DataInput({ onOpenCheckoutModal }: DataInputProps) {
   const [inputType, setInputType] = useState("entrada");
 
   const { isFormValid } = useValidateInput();
+  const { handleFetchData } = useHistory();
 
   const [isHistoryOpen, setIsHistoryOpen] = useState(false);
 
-  function handleShowHistory() {
+  // não consegui mostrar o historico como pedido no layout do figma.
+  // onde os botoes de etrada e saida não aparecem.
+  // Aqui o historico é mostrado na sessão da Saída, abaixo do botão;
+  async function handleShowHistory() {
     if (isFormValid) {
+      await handleFetchData();
       setIsHistoryOpen(true);
     }
   }

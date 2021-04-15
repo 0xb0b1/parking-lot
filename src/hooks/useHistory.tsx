@@ -22,7 +22,8 @@ interface HistoryProviderProps {
 }
 
 interface HistoryContextData {
-  plate: PlateProps[] | undefined;
+  plate: PlateProps[];
+  handleFetchData: () => Promise<void>;
 }
 
 export const HistoryContext = createContext<HistoryContextData>(
@@ -30,22 +31,20 @@ export const HistoryContext = createContext<HistoryContextData>(
 );
 
 export function HistoryProvider({ children }: HistoryProviderProps) {
-  const [plate, setPlate] = useState<PlateProps[]>();
+  const [plate, setPlate] = useState<PlateProps[]>([]);
 
   const { plateNumber } = useValidateInput();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await api
-        .get(`/${plateNumber}`)
-        .then((response) => response.data);
-      setPlate(data);
-    };
-    fetchData();
-  }, [plateNumber]);
+  async function handleFetchData() {
+    const data = await api
+      .get(`/${plateNumber}`)
+      .then((response) => response.data);
+
+    setPlate(data);
+  }
 
   return (
-    <HistoryContext.Provider value={{ plate }}>
+    <HistoryContext.Provider value={{ plate, handleFetchData }}>
       {children}
     </HistoryContext.Provider>
   );

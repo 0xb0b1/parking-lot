@@ -53,6 +53,12 @@ export const Content = styled.div`
     box-sizing: border-box;
     box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.2);
 
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
     div > span:first-child {
       color: var(--gray-300);
       font-size: 0.65rem;
@@ -74,5 +80,11 @@ export const Content = styled.div`
   }
 
   .payment {
+    img {
+      width: 1rem;
+      height: 0.45rem;
+
+      margin-left: 0.15rem;
+    }
   }
 `;

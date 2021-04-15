@@ -1,4 +1,4 @@
-import { Container } from "./styles";
+import { Container, Content } from "./styles";
 
 import BackIcon from "../../images/Shape.png";
 
@@ -20,22 +20,24 @@ function RegisterDetail({
   return (
     <Container>
       <img onClick={leaveRegister} src={BackIcon} alt="Go Back Arrow" />
-      <div className="plate">
-        <span>PLACA</span>
-        <span>{plate}</span>
-      </div>
-      <div className="status">
-        <span>STATUS</span>
-        <span>{status}</span>
-      </div>
-      <div className="time">
-        <span>{paid ? "TEMPO TOTAL" : "TEMPO ATUAL"}</span>
-        <span>{time}</span>
-      </div>
-      <div className="paid">
-        <span>PAGAMENTO</span>
-        <span>{paid}</span>
-      </div>
+      <Content>
+        <div className="plate">
+          <span>PLACA</span>
+          <span>ABC-1234</span>
+        </div>
+        <div className="status">
+          <span>STATUS</span>
+          <span>STACIONADO</span>
+        </div>
+        <div className="time">
+          <span>{paid ? "TEMPO TOTAL" : "TEMPO ATUAL"}</span>
+          <span>1h20 min</span>
+        </div>
+        <div className="paid">
+          <span>PAGAMENTO</span>
+          <span>-</span>
+        </div>
+      </Content>
     </Container>
   );
 }

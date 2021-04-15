@@ -5,6 +5,7 @@ import { Form } from "../styles";
 
 function Entrance() {
   const { plateNumber, isFormValid, handleSetPlateNumber } = useValidateInput();
+
   return (
     <Form>
       <label>

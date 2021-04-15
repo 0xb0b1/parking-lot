@@ -1,13 +1,10 @@
 import { useContext } from "react";
-import { createContext, ReactNode, useEffect, useState } from "react";
-import { contextType } from "react-modal";
+import { createContext, ReactNode, useState } from "react";
 import { api } from "../services/api";
 import { useValidateInput } from "./useValidateInput";
-
 interface PaymentProviderProps {
   children: ReactNode;
 }
-
 interface PaymentContextData {
   isPaymentComplete: boolean;
   // plateNumber: string;

@@ -17,7 +17,7 @@ function DataInput({ onOpenCheckoutModal }: DataInputProps) {
   // the input button type
   const [inputType, setInputType] = useState("entrada");
 
-  const { isFormValid } = useValidateInput();
+  const { isFormValid, plateNumber } = useValidateInput();
   const { handleFetchData } = useHistory();
 
   const [isHistoryOpen, setIsHistoryOpen] = useState(false);
@@ -27,7 +27,7 @@ function DataInput({ onOpenCheckoutModal }: DataInputProps) {
   // Aqui o historico é mostrado na sessão da Saída, abaixo do botão;
   async function handleShowHistory() {
     if (isFormValid) {
-      await handleFetchData();
+      await handleFetchData(plateNumber);
       setIsHistoryOpen(true);
     }
   }

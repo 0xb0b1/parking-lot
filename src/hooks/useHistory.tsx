@@ -17,7 +17,7 @@ interface HistoryProviderProps {
 
 interface HistoryContextData {
   plate: PlateProps[];
-  handleFetchData: () => Promise<void>;
+  handleFetchData: (plate: string) => Promise<void>;
 }
 
 export const HistoryContext = createContext<HistoryContextData>(
@@ -27,12 +27,10 @@ export const HistoryContext = createContext<HistoryContextData>(
 export function HistoryProvider({ children }: HistoryProviderProps) {
   const [plate, setPlate] = useState<PlateProps[]>([]);
 
-  const { plateNumber } = useValidateInput();
+  // const { plateNumber } = useValidateInput();
 
-  async function handleFetchData() {
-    const data = await api
-      .get(`/${plateNumber}`)
-      .then((response) => response.data);
+  async function handleFetchData(plate: string) {
+    const data = await api.get(`/${plate}`).then((response) => response.data);
 
     setPlate(data);
   }

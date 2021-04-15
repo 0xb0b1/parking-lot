@@ -11,25 +11,9 @@ export const Container = styled.div`
   padding: 0.45rem 1rem;
 `;
 
-export const Header = styled.header`
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-
-  img {
-    margin-right: 0.45rem;
-  }
-
-  span {
-    color: var(--cyan);
-    font-size: 1.5rem;
-    font-weight: 600;
-  }
-`;
-
 export const Content = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: column;
 
@@ -85,5 +69,21 @@ export const Content = styled.div`
 
       margin-left: 0.15rem;
     }
+  }
+`;
+
+export const Header = styled.header`
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  img {
+    margin-right: 0.45rem;
+  }
+
+  span {
+    color: var(--cyan);
+    font-size: 1.5rem;
+    font-weight: 600;
   }
 `;

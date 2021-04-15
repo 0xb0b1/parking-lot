@@ -37,7 +37,7 @@ export function HistoryProvider({ children }: HistoryProviderProps) {
   useEffect(() => {
     const fetchData = async () => {
       const data = await api
-        .get(`${plateNumber}`)
+        .get(`/${plateNumber}`)
         .then((response) => response.data);
       setPlate(data);
     };

@@ -3,6 +3,8 @@ import { useValidateInput } from "../../hooks/useValidateInput";
 import { Container, Header, Content } from "./styles";
 
 import BackIcon from "../../images/Shape.png";
+import { useEffect } from "react";
+import { api } from "../../services/api";
 
 interface IProps {
   LeaveHistory: () => void;
@@ -10,6 +12,13 @@ interface IProps {
 
 function PlateHistory({ LeaveHistory }: IProps) {
   const { plateNumber } = useValidateInput();
+
+  console.log(typeof plateNumber);
+  console.log(plateNumber);
+
+  useEffect(() => {
+    api.get(`${plateNumber}`).then((response) => console.log(response.data));
+  });
 
   const plate = [
     {

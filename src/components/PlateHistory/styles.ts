@@ -67,7 +67,7 @@ export const Content = styled.div`
       width: 1rem;
       height: 0.45rem;
 
-      margin-left: 0.15rem;
+      margin: 0.15rem;
     }
   }
 `;
@@ -78,7 +78,7 @@ export const Header = styled.header`
   justify-content: flex-start;
 
   img {
-    margin-right: 0.45rem;
+    margin: 0.45rem;
   }
 
   span {

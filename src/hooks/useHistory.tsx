@@ -1,7 +1,6 @@
 import { createContext, ReactNode, useContext, useState } from "react";
 
 import { api } from "../services/api";
-import { useValidateInput } from "./useValidateInput";
 
 interface PlateProps {
   time: string;

@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent } from "react";
 import { useValidateInput } from "../../hooks/useValidateInput";
 
 import Modal from "react-modal";

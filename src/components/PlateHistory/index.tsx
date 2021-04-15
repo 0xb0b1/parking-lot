@@ -1,7 +1,4 @@
-// import { useEffect, useState } from "react";
 import { useValidateInput } from "../../hooks/useValidateInput";
-
-// import { api } from "../../services/api";
 
 import { Container, Header, Content } from "./styles";
 

@@ -11,6 +11,7 @@ function Entrance() {
   const [checkin, setCheckin] = useState(false);
 
   const [registered, setRegistered] = useState(false);
+  const [completedRegistration, setCompletedRegistration] = useState(false);
 
   async function handleConfirmCheckin() {
     if (isFormValid) {
@@ -19,6 +20,7 @@ function Entrance() {
   }
 
   function handleCloseChecking() {
+    setRegistered(false);
     setCheckin(false);
   }
 

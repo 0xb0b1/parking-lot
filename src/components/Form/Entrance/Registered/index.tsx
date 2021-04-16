@@ -1,15 +1,20 @@
 import { Container } from "../LoadingEntrance/styles";
 
 import RegisteredImg from "../../../../images/icons/round-done-button.svg";
+import { useEffect } from "react";
 
 interface IProps {
   backToHome: () => void;
 }
 
 function Registered({ backToHome }: IProps) {
-  setInterval(() => {
-    backToHome();
-  }, 1000);
+  useEffect(() => {
+    setTimeout(() => {
+      backToHome();
+    }, 1000);
+
+    clearInterval();
+  });
 
   return (
     <Container>

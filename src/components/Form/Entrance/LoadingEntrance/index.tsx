@@ -11,9 +11,13 @@ interface IProps {
 }
 
 function LoadingEntrance({ registeredCheck }: IProps) {
-  setInterval(() => {
-    registeredCheck();
-  }, 1000);
+  useEffect(() => {
+    setInterval(() => {
+      registeredCheck();
+    }, 1000);
+
+    clearInterval();
+  });
 
   return (
     <Container>

@@ -3,26 +3,33 @@ import { useValidateInput } from "../../../hooks/useValidateInput";
 import { Form } from "../styles";
 
 import LoadingEntrance from "./LoadingEntrance";
+import Registered from "./Registered";
 
 function Entrance() {
   const { plateNumber, isFormValid, handleSetPlateNumber } = useValidateInput();
 
   const [checkin, setCheckin] = useState(false);
 
-  function handleConfirmCheckin() {
+  const [registered, setRegistered] = useState(false);
+
+  async function handleConfirmCheckin() {
     if (isFormValid) {
       setCheckin(true);
     }
   }
 
-  // function handleCloseChecking() {
-  //   setCheckin(false);
-  // }
+  function handleCloseChecking() {
+    setCheckin(false);
+  }
 
   return (
     <>
       {checkin ? (
-        <LoadingEntrance />
+        registered ? (
+          <Registered backToHome={handleCloseChecking} />
+        ) : (
+          <LoadingEntrance registeredCheck={() => setRegistered(true)} />
+        )
       ) : (
         <Form>
           <label>

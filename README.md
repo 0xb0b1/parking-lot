@@ -24,7 +24,8 @@ de veículos de um estacionamento..
 
 <br />
 <div align="center">
-  <img src="https://github.com/0xb0b1/parking-challenge/blob/master/screenshot.jpg" width="420">
+  <img src="https://github.com/0xb0b1/parking-challenge/blob/master/entrada.jpg" width="420">
+  <img src="https://github.com/0xb0b1/parking-challenge/blob/master/saida.jpg" width="420">
 </div>
 
 # :eyes: Demo Website
@@ -42,7 +43,7 @@ de veículos de um estacionamento..
 
 
 # :computer: Dificuldades
-* Criar modal de para verificar Saída do veiculo..
+* Criar modal para verificar Saída do veiculo.
 * Confirmar Pagamento e Saída do veiculo.
 * Mostrar o registro do item por placa.
 * Salvar os dados no localStorage.

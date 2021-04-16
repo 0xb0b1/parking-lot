@@ -3,10 +3,11 @@ import { Form, HistoryButton } from "../styles";
 
 interface ExitProps {
   checkoutPayment: () => void;
+  completeCheckout: () => void;
   showHistory: () => void;
 }
 
-function Exit({ checkoutPayment, showHistory }: ExitProps) {
+function Exit({ checkoutPayment, completeCheckout, showHistory }: ExitProps) {
   const { plateNumber, isFormValid, handleSetPlateNumber } = useValidateInput();
 
   return (
@@ -30,6 +31,7 @@ function Exit({ checkoutPayment, showHistory }: ExitProps) {
         PAGAMENTO
       </button>
       <button
+        onClick={completeCheckout}
         type="button"
         className="saida"
         style={{ border: isFormValid ? "2px solid #A769B2" : "" }}

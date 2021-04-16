@@ -10,9 +10,13 @@ import { Container, Buttons, InputButton } from "./styles";
 
 interface DataInputProps {
   onOpenCheckoutModal: () => void;
+  onOpenCheckoutCompleteModal: () => void;
 }
 
-function DataInput({ onOpenCheckoutModal }: DataInputProps) {
+function DataInput({
+  onOpenCheckoutModal,
+  onOpenCheckoutCompleteModal,
+}: DataInputProps) {
   // the input button type
   const [inputType, setInputType] = useState("entrada");
 
@@ -60,6 +64,7 @@ function DataInput({ onOpenCheckoutModal }: DataInputProps) {
       ) : (
         <Exit
           checkoutPayment={onOpenCheckoutModal}
+          completeCheckout={onOpenCheckoutCompleteModal}
           showHistory={handleShowHistory}
         />
       )}

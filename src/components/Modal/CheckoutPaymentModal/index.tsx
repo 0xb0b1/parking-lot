@@ -1,10 +1,10 @@
 import { FormEvent } from "react";
-import { useValidateInput } from "../../hooks/useValidateInput";
+import { useValidateInput } from "../../../hooks/useValidateInput";
 
 import Modal from "react-modal";
 
-import { Container, ConfirmButton, ExitButton } from "./styles";
-import { usePayment } from "../../hooks/usePayment";
+import { Container, ConfirmButton, ExitButton } from "../styles";
+import { usePayment } from "../../../hooks/usePayment";
 
 interface CheckoutPaymentModalProps {
   isOpen: boolean;

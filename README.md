@@ -25,6 +25,8 @@ de veículos de um estacionamento..
 <br />
 <div align="center">
   <img src="https://github.com/0xb0b1/parking-challenge/blob/master/entrada.jpg" width="420">
+</div>
+<div align="center">
   <img src="https://github.com/0xb0b1/parking-challenge/blob/master/saida.jpg" width="420">
 </div>
 

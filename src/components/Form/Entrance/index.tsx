@@ -15,9 +15,9 @@ function Entrance() {
     }
   }
 
-  function handleCloseChecking() {
-    setCheckin(false);
-  }
+  // function handleCloseChecking() {
+  //   setCheckin(false);
+  // }
 
   return (
     <>

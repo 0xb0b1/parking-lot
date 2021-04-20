@@ -44,11 +44,10 @@ de veículos de um estacionamento..
 * styled-components
 
 
-# :computer: Dificuldades
+# :computer: Oque não fiz?
 * Criar modal para verificar Saída do veiculo.
 * Confirmar Pagamento e Saída do veiculo.
-* Mostrar o registro do item por placa.
-* Salvar os dados no localStorage.
+* Mostrar o registro do item por placa, não encontrei uma maneira de pegar o valor de cada item.
 
 # :construction_worker: Como rodar:
 **Clone o repo e entre no diretorio e:**

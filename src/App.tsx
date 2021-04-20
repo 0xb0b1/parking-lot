@@ -36,8 +36,6 @@ function App() {
     if (isFormValid) {
       setIsNewCheckoutModalOpen(true);
     }
-
-    return;
   }
 
   function handleCloseCheckoutModal() {
@@ -45,7 +43,9 @@ function App() {
   }
 
   function handleOpenCheckoutCompleteModal() {
-    setIsNewCheckoutCompleteModalOpen(true);
+    if (isFormValid) {
+      setIsNewCheckoutCompleteModalOpen(true);
+    }
   }
 
   function handleCloseCheckoutCompleteModal() {

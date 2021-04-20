@@ -45,7 +45,7 @@ de veículos de um estacionamento..
 
 
 # :computer: Oque não fiz?
-* Criar modal para verificar Saída do veiculo.
+* Criar o modal onde é registrado o pagamento e saída do veículo, no entanto as funcionalidades estão completas (pagar e liberar).
 * Confirmar Pagamento e Saída do veiculo.
 * Mostrar o registro do item por placa, não encontrei uma maneira de pegar o valor de cada item.
 

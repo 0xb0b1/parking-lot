@@ -14,7 +14,6 @@ import { OpenMenuProvider } from "./hooks/useOpenMenu";
 import { useValidateInput } from "./hooks/useValidateInput";
 import { PaymentProvider } from "./hooks/usePayment";
 import { HistoryProvider } from "./hooks/useHistory";
-import { RegisterProvider } from "./hooks/useRegister";
 
 import { GlobalStyle } from "./styles/global";
 // import { api } from "./services/api";
@@ -56,25 +55,23 @@ function App() {
   return (
     <OpenMenuProvider>
       <PaymentProvider>
-        <RegisterProvider>
-          <HistoryProvider>
-            <GlobalStyle />
-            <NavBar />
-            <Menu />
-            <DataInput
-              onOpenCheckoutModal={handleOpenCheckoutModal}
-              onOpenCheckoutCompleteModal={handleOpenCheckoutCompleteModal}
-            />
-            <CheckoutPaymentModal
-              isOpen={isNewCheckoutModalOpen}
-              onRequestClose={handleCloseCheckoutModal}
-            />
-            <CheckoutCompleteModal
-              isOpen={isNewCheckoutCompleteModalOpen}
-              onRequestClose={handleCloseCheckoutCompleteModal}
-            />
-          </HistoryProvider>
-        </RegisterProvider>
+        <HistoryProvider>
+          <GlobalStyle />
+          <NavBar />
+          <Menu />
+          <DataInput
+            onOpenCheckoutModal={handleOpenCheckoutModal}
+            onOpenCheckoutCompleteModal={handleOpenCheckoutCompleteModal}
+          />
+          <CheckoutPaymentModal
+            isOpen={isNewCheckoutModalOpen}
+            onRequestClose={handleCloseCheckoutModal}
+          />
+          <CheckoutCompleteModal
+            isOpen={isNewCheckoutCompleteModalOpen}
+            onRequestClose={handleCloseCheckoutCompleteModal}
+          />
+        </HistoryProvider>
       </PaymentProvider>
     </OpenMenuProvider>
   );

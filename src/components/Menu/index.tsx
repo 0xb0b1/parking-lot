@@ -11,7 +11,7 @@ function Menu() {
       }}
     >
       <a href="/entradas">
-        <span>Entrada</span>
+        <span onClick={() => console.log("Entrada")}>Entrada</span>
       </a>
       <a href="/saidas">
         <span>Saída</span>

@@ -43,6 +43,11 @@ de veículos de um estacionamento..
 * TypeScript
 * styled-components
 
+# :computer: Functionalidades completas:
+* Registar a entrada de um veiculo pela placa
+* Registar o pagamento
+* Registrar saída
+* Exibir histórico por placa
 
 # :computer: Oque não fiz?
 * Criar o modal onde é registrado o pagamento e saída do veículo, no entanto as funcionalidades estão completas (pagar e liberar).

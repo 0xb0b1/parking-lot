@@ -21,15 +21,11 @@ function CheckoutPaymentModal({
 
   const { handlePayment } = usePayment();
 
-  // const [confirmPayment, setConfirmPayment] = useState(false);
-
   async function handleCompletePayment(event: FormEvent) {
     event.preventDefault();
 
     // payment logic goes here
     handlePayment(plateNumber);
-
-    // setPaymentCompleted(false);
   }
 
   return (

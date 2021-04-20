@@ -22,13 +22,9 @@ export function PaymentProvider({ children }: PaymentProviderProps) {
 
   async function handlePayment(plate: string) {
     if (isFormValid) {
-      await api
-        .post(`${plate}/pay`, { paid: true })
-        .then((response) => console.log(response.statusText));
+      await api.post(`${plate}/pay`);
     }
-
     setIsPaymentComplete(true);
-    console.log("Payment completed");
   }
 
   return (

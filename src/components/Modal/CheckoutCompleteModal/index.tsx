@@ -1,9 +1,14 @@
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 import { useValidateInput } from "../../../hooks/useValidateInput";
 
 import Modal from "react-modal";
 
+import LoadingImg from "../../../images/icons/loading.svg";
+import RegisteredImg from "../../../images/icons/round-done-button.svg";
+
 import { Container, ConfirmButton, ExitButton } from "../styles";
+import { usePayment } from "../../../hooks/usePayment";
+import { api } from "../../../services/api";
 
 interface CheckoutPaymentModalProps {
   isOpen: boolean;
@@ -14,12 +19,22 @@ function CheckoutCompleteModal({
   isOpen,
   onRequestClose,
 }: CheckoutPaymentModalProps) {
-  const { plateNumber } = useValidateInput();
+  const { plateNumber, isFormValid } = useValidateInput();
+
+  const { isPaymentComplete } = usePayment();
+
+  const [activeModal, setActiveModal] = useState("checkoutStart");
 
   async function handleCompleteCheckout(event: FormEvent) {
     event.preventDefault();
 
     // setPaymentCompleted(false);
+    // setActiveModal("checkout");
+
+    // liberar a saída do veiculo
+    if (isFormValid) {
+      await api.post(`${plateNumber}/out`);
+    }
   }
 
   return (
@@ -40,6 +55,24 @@ function CheckoutCompleteModal({
             VOLTAR
           </ExitButton>
         </Container>
+      </Modal>
+
+      <Modal
+        isOpen={activeModal === "checkout"}
+        overlayClassName="react-modal-overlay"
+        className="react-modal-content"
+      >
+        <img src={LoadingImg} alt="Loading" />
+        <span>Confirmando...</span>
+      </Modal>
+
+      <Modal
+        isOpen={activeModal === "checkoutComplete"}
+        overlayClassName="react-modal-overlay"
+        className="react-modal-content"
+      >
+        <img src={RegisteredImg} alt="Loading" />
+        <span>PAGO!</span>
       </Modal>
     </>
   );

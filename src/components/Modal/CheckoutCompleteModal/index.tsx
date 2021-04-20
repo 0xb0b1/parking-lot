@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent } from "react";
 import { useValidateInput } from "../../../hooks/useValidateInput";
 
 import Modal from "react-modal";
@@ -7,7 +7,7 @@ import LoadingImg from "../../../images/icons/loading.svg";
 import RegisteredImg from "../../../images/icons/round-done-button.svg";
 
 import { Container, ConfirmButton, ExitButton } from "../styles";
-import { usePayment } from "../../../hooks/usePayment";
+// import { usePayment } from "../../../hooks/usePayment";
 import { api } from "../../../services/api";
 
 interface CheckoutPaymentModalProps {
@@ -21,9 +21,7 @@ function CheckoutCompleteModal({
 }: CheckoutPaymentModalProps) {
   const { plateNumber, isFormValid } = useValidateInput();
 
-  const { isPaymentComplete } = usePayment();
-
-  const [activeModal, setActiveModal] = useState("checkoutStart");
+  // const [activeModal, setActiveModal] = useState("checkoutStart");
 
   async function handleCompleteCheckout(event: FormEvent) {
     event.preventDefault();
@@ -58,7 +56,7 @@ function CheckoutCompleteModal({
       </Modal>
 
       <Modal
-        isOpen={activeModal === "checkout"}
+        isOpen={false}
         overlayClassName="react-modal-overlay"
         className="react-modal-content"
       >
@@ -67,7 +65,7 @@ function CheckoutCompleteModal({
       </Modal>
 
       <Modal
-        isOpen={activeModal === "checkoutComplete"}
+        isOpen={false}
         overlayClassName="react-modal-overlay"
         className="react-modal-content"
       >

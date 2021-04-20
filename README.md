@@ -13,9 +13,9 @@
   <a href="https://github.com/0xb0b1/parking-challenge/blob/master/LICENSE">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-4DD0E1.svg" target="_blank" />
   </a>
-  <img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr/0xb0b1/parking-challenge?color=#4DD0E1" />
-  <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/0xb0b1/parking-challenge?color=#4DD0E1" />
-  <img alt="" src="https://img.shields.io/github/repo-size/0xb0b1/parking-challenge?color=#4DD0E1" />
+  <img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr/0xb0b1/parking-challenge?color=4DD0E1" />
+  <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/0xb0b1/parking-challenge?color=4DD0E1" />
+  <img alt="" src="https://img.shields.io/github/repo-size/0xb0b1/parking-challenge?color=4DD0E1" />
 </p>
 
 > Web app para registro e visualização de entradas e saídas

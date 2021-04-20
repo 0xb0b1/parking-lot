@@ -50,8 +50,7 @@ de veículos de um estacionamento..
 * Exibir histórico por placa
 
 # :computer: Oque não fiz?
-* Criar o modal onde é registrado o pagamento e saída do veículo, no entanto as funcionalidades estão completas (pagar e liberar).
-* Confirmar Pagamento e Saída do veiculo.
+* Finalizar o modal onde é registrado o pagamento e saída do veículo, no entanto as funcionalidades estão completas (pagar e liberar).
 * Mostrar o registro do item por placa, não encontrei uma maneira de pegar o valor de cada item.
 
 # :construction_worker: Como rodar:

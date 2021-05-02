@@ -79,16 +79,17 @@ export const Form = styled.form`
 `;
 
 export const HistoryButton = styled.div`
-  color: #00bcd4;
-  padding: 2rem 1rem;
+  span {
+    padding: 2rem 1rem;
 
-  margin: 0 auto;
+    margin: 0 auto;
 
-  cursor: pointer;
+    cursor: pointer;
 
-  font: 600 0.93rem "Open Sans", sans-serif;
-  text-transform: uppercase;
+    font: 600 0.93rem "Open Sans", sans-serif;
+    text-transform: uppercase;
 
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
+  }
 `;

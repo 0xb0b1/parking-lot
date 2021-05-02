@@ -36,12 +36,19 @@ function Exit({ checkoutPayment, completeCheckout, showHistory }: ExitProps) {
         className="saida"
         style={{
           border: isFormValid ? "2px solid rgba(20, 204, 124, 0.3)" : "",
+          cursor: isFormValid ? "pointer" : "not-allowed",
         }}
       >
         SAÍDA
       </button>
       <HistoryButton onClick={showHistory}>
-        <span>Ver Historico</span>
+        <span
+          style={{
+            color: isFormValid ? "#10CC94" : "transparent",
+          }}
+        >
+          Ver Historico
+        </span>
       </HistoryButton>
     </Form>
   );

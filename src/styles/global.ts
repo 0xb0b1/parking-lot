@@ -4,10 +4,16 @@ export const GlobalStyle = createGlobalStyle`
   :root {
     --background: #f2f2f2;
     --white: #fff;
+    
     --cyan: #4DD0E1;
+
     --orange: #F1B147;
-    --violet: #A769B2;
-    --green: #35E4BD;
+
+    --green-100: #0E8A54;
+    --green-300: #11CC7C;
+    --green-500: #48DD90;
+    --green-800: #35E4BD;
+
     --btn-green: #28DD91;
 
     --gray-100: #DADADA;

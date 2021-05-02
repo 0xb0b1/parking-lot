@@ -7,6 +7,10 @@ export const Container = styled.div`
   max-width: 420px;
 
   margin: 2rem auto;
+
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
 `;
 
 export const Buttons = styled.div`

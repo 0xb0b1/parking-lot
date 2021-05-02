@@ -57,7 +57,7 @@ export const Form = styled.form`
 
     &.active {
       color: var(--white);
-      background: var(--btn-green);
+      background: var(--green-300);
     }
 
     &.disabled {
@@ -66,7 +66,7 @@ export const Form = styled.form`
 
     &.pagamento {
       color: var(--white);
-      background: var(--violet);
+      background: var(--green-300);
     }
 
     &.saida {

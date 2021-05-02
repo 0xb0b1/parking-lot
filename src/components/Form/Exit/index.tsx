@@ -34,7 +34,9 @@ function Exit({ checkoutPayment, completeCheckout, showHistory }: ExitProps) {
         onClick={completeCheckout}
         type="button"
         className="saida"
-        style={{ border: isFormValid ? "2px solid #A769B2" : "" }}
+        style={{
+          border: isFormValid ? "2px solid rgba(20, 204, 124, 0.3)" : "",
+        }}
       >
         SAÍDA
       </button>

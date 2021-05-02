@@ -33,7 +33,7 @@ export const ConfirmButton = styled.button`
   font-style: normal;
 
   color: var(--white);
-  background: var(--violet);
+  background: var(--green-500);
 `;
 
 export const ExitButton = styled.button`

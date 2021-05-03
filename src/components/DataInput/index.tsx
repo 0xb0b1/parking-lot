@@ -5,7 +5,7 @@ import { useValidateInput } from "../../hooks/useValidateInput";
 
 import Entrance from "../Form/Entrance";
 import Exit from "../Form/Exit";
-import PlateHistory from "../PlateHistory";
+// import PlateHistory from "../PlateHistory";
 import { Container, Buttons, InputButton } from "./styles";
 
 interface DataInputProps {
@@ -23,18 +23,18 @@ function DataInput({
   const { isFormValid, plateNumber } = useValidateInput();
   const { handleFetchData } = useHistory();
 
-  const [isHistoryOpen, setIsHistoryOpen] = useState(false);
+  // const [isHistoryOpen, setIsHistoryOpen] = useState(false);
 
   function handleShowHistory() {
     if (isFormValid) {
       handleFetchData(plateNumber);
-      setIsHistoryOpen(true);
+      // setIsHistoryOpen(true);
     }
   }
 
-  function handleCloseHistory() {
-    setIsHistoryOpen(false);
-  }
+  // function handleCloseHistory() {
+  //   setIsHistoryOpen(false);
+  // }
 
   return (
     <Container>
@@ -56,8 +56,6 @@ function DataInput({
       </Buttons>
       {inputType === "entrada" ? (
         <Entrance />
-      ) : isHistoryOpen ? (
-        <PlateHistory LeaveHistory={handleCloseHistory} />
       ) : (
         <Exit
           checkoutPayment={onOpenCheckoutModal}

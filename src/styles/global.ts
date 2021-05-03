@@ -90,6 +90,22 @@ export const GlobalStyle = createGlobalStyle`
 
     opacity: 0.95;
 
+    &::-webkit-scrollbar {
+      width: 5px;
+      background-color: var(--green-300);
+    }
 
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--green-500);
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: var(--green-100);
+    }
+
+    &::-webkit-scrollbar-thumb:active {
+      background-color: var(--green-800);
+    }
   }
 `;

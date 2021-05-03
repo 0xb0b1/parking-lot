@@ -74,20 +74,20 @@ export const Content = styled.div`
 
 export const Header = styled.header`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
 
   svg {
-    font-size: 2.25rem;
+    font-size: 1.85rem;
 
-    margin: 0.25rem;
+    margin: 0.45rem;
     padding-right: 0.45rem;
 
     color: var(--green-300);
   }
 
   span {
-    margin-top: 0.45rem;
+    margin: 0.45rem auto;
 
     color: var(--green-300);
     font-size: 1.5rem;

@@ -17,7 +17,7 @@ export const NavLogo = styled.div``;
 
 export const Hamburger = styled.div`
   svg {
-    font-size: 2rem;
+    font-size: 2.15rem;
     color: #fff;
   }
 

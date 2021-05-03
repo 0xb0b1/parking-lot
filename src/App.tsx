@@ -8,6 +8,7 @@ import Modal from "react-modal";
 
 import CheckoutPaymentModal from "./components/Modal/CheckoutPaymentModal";
 import CheckoutCompleteModal from "./components/Modal/CheckoutCompleteModal";
+import HistoryModal from "./components/Modal/HistoryModal";
 
 // context hooks
 import { OpenMenuProvider } from "./hooks/useOpenMenu";
@@ -26,6 +27,8 @@ function App() {
     isNewCheckoutCompleteModalOpen,
     setIsNewCheckoutCompleteModalOpen,
   ] = useState(false);
+
+  const [isNewHistoryModalOpen, setIsnewHistoryModalOpen] = useState(false);
 
   const { isFormValid } = useValidateInput();
 
@@ -49,6 +52,14 @@ function App() {
     setIsNewCheckoutCompleteModalOpen(false);
   }
 
+  function handleOpenHistoryModal() {
+    setIsnewHistoryModalOpen(true);
+  }
+
+  function handleCloseHistoryModal() {
+    setIsnewHistoryModalOpen(false);
+  }
+
   return (
     <OpenMenuProvider>
       <PaymentProvider>
@@ -59,6 +70,7 @@ function App() {
           <DataInput
             onOpenCheckoutModal={handleOpenCheckoutModal}
             onOpenCheckoutCompleteModal={handleOpenCheckoutCompleteModal}
+            onOpenHistoryModal={handleOpenHistoryModal}
           />
           <CheckoutPaymentModal
             isOpen={isNewCheckoutModalOpen}
@@ -68,6 +80,11 @@ function App() {
             isOpen={isNewCheckoutCompleteModalOpen}
             onRequestClose={handleCloseCheckoutCompleteModal}
           />
+
+          <HistoryModal
+            isOpen={isNewHistoryModalOpen}
+            onRequestClose={handleCloseHistoryModal}
+          ></HistoryModal>
         </HistoryProvider>
       </PaymentProvider>
     </OpenMenuProvider>

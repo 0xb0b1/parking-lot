@@ -6,6 +6,8 @@ export const Container = styled.form`
   align-items: center;
   justify-content: center;
 
+  margin-top: 4rem;
+
   span {
     text-align: center;
     margin-bottom: 0.45rem;

@@ -51,6 +51,12 @@ export const Form = styled.form`
     color: var(--gray-300);
     background: var(--gray-100);
 
+    transition: filter 0.2s;
+
+    &:hover:not(.saida) {
+      filter: brightness(0.8);
+    }
+
     &.entrada {
       margin-bottom: 3rem;
     }

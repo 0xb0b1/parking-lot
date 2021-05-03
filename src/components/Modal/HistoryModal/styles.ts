@@ -77,11 +77,18 @@ export const Header = styled.header`
   align-items: flex-start;
   justify-content: flex-start;
 
-  img {
-    margin: 0.45rem;
+  svg {
+    font-size: 2.25rem;
+
+    margin: 0.25rem;
+    padding-right: 0.45rem;
+
+    color: var(--green-300);
   }
 
   span {
+    margin-top: 0.45rem;
+
     color: var(--green-300);
     font-size: 1.5rem;
     font-weight: 600;

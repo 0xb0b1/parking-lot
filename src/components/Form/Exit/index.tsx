@@ -4,9 +4,10 @@ import { Form, HistoryButton } from "../styles";
 interface ExitProps {
   checkoutPayment: () => void;
   completeCheckout: () => void;
+  showHistory: () => void;
 }
 
-function Exit({ checkoutPayment, completeCheckout }: ExitProps) {
+function Exit({ checkoutPayment, completeCheckout, showHistory }: ExitProps) {
   const { plateNumber, isFormValid, handleSetPlateNumber } = useValidateInput();
 
   return (
@@ -37,7 +38,11 @@ function Exit({ checkoutPayment, completeCheckout }: ExitProps) {
         SAÍDA
       </button>
       <HistoryButton>
-        <button type="button" className={isFormValid ? "active" : ""}>
+        <button
+          type="button"
+          className={isFormValid ? "active" : ""}
+          onClick={showHistory}
+        >
           Ver Historico
         </button>
       </HistoryButton>

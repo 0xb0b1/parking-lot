@@ -5,8 +5,6 @@ export const GlobalStyle = createGlobalStyle`
     --background: #f2f2f2;
     --white: #fff;
     
-    /* --cyan: #11CC77; */
-
     --orange: #F1B147;
 
     --green-100: #0E8A54;
@@ -71,22 +69,27 @@ export const GlobalStyle = createGlobalStyle`
     display: flex;
     align-items: center;
     justify-content: center;
+
   }
 
   .react-modal-content {
     width: 100%;
-    max-width: 21.18rem;
+    max-width: 31.18rem;
 
     height: 100%;
-    max-height: 18.5rem;
+    max-height: 28rem;
+    overflow-y: scroll;
 
     background: var(--background);
+
     padding: 2rem;
+    margin: 0.65rem;
+
     position: relative;
     border-radius: 0.25rem;
 
     opacity: 0.95;
 
-    margin: 0.65rem;
+
   }
 `;

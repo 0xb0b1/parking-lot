@@ -53,7 +53,9 @@ function App() {
   }
 
   function handleOpenHistoryModal() {
-    setIsnewHistoryModalOpen(true);
+    if (isFormValid) {
+      setIsnewHistoryModalOpen(true);
+    }
   }
 
   function handleCloseHistoryModal() {

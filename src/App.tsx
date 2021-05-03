@@ -67,13 +67,16 @@ function App() {
       <PaymentProvider>
         <HistoryProvider>
           <GlobalStyle />
+
           <NavBar />
           <Menu />
+
           <DataInput
             onOpenCheckoutModal={handleOpenCheckoutModal}
             onOpenCheckoutCompleteModal={handleOpenCheckoutCompleteModal}
             onOpenHistoryModal={handleOpenHistoryModal}
           />
+
           <CheckoutPaymentModal
             isOpen={isNewCheckoutModalOpen}
             onRequestClose={handleCloseCheckoutModal}
@@ -86,7 +89,7 @@ function App() {
           <HistoryModal
             isOpen={isNewHistoryModalOpen}
             onRequestClose={handleCloseHistoryModal}
-          ></HistoryModal>
+          />
         </HistoryProvider>
       </PaymentProvider>
     </OpenMenuProvider>

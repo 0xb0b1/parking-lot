@@ -14,7 +14,13 @@ export const Container = styled.nav`
 `;
 
 export const NavLogo = styled.div``;
+
 export const Hamburger = styled.div`
+  svg {
+    font-size: 2rem;
+    color: #fff;
+  }
+
   &:hover {
     cursor: pointer;
   }

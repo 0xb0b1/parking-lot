@@ -1,16 +1,14 @@
 // import { useState } from "react";
 
-import { Container, NavLogo, Hamburger } from "./styles";
+import { FaAlignRight } from "react-icons/fa";
+import { FiX } from "react-icons/fi";
 
-// import { HiMenu } from "react-icons/hi";
-import OpenMenu from "../../images/icons/menu.svg";
-import CloseMenu from "../../images/icons/close.svg";
+import { Container, NavLogo, Hamburger } from "./styles";
 
 import Logo from "../../images/logo_parking.svg";
 import { useOpenMenu } from "../../hooks/useOpenMenu";
 
 function NavBar() {
-  // const [isActiveMenu, setIsActiveMenu] = useState(false);
   const { isOpenMenu, handleShowMenu } = useOpenMenu();
 
   return (
@@ -19,11 +17,11 @@ function NavBar() {
         <img src={Logo} alt="Logo" />
       </NavLogo>
       <Hamburger>
-        <img
-          onClick={handleShowMenu}
-          src={isOpenMenu ? CloseMenu : OpenMenu}
-          alt="Menu Icon"
-        />
+        {isOpenMenu ? (
+          <FiX onClick={handleShowMenu} />
+        ) : (
+          <FaAlignRight onClick={handleShowMenu} />
+        )}
       </Hamburger>
     </Container>
   );

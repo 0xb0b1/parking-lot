@@ -17,7 +17,7 @@ export const Container = styled.form`
   h3 {
     font-size: 2.375rem;
     font-weight: 400;
-    color: var(--cyan);
+    color: var(--green-300);
   }
 `;
 
@@ -39,7 +39,7 @@ export const ConfirmButton = styled.button`
 export const ExitButton = styled.button`
   border: 0;
   background: none;
-  color: var(--cyan);
+  color: var(--green-300);
 
   font-weight: 600;
 

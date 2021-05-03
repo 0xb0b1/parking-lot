@@ -35,7 +35,7 @@ export const Content = styled.div`
 
   .plate {
     span:last-child {
-      color: var(--cyan);
+      color: var(--green-300);
       font-size: 2.375rem;
     }
   }

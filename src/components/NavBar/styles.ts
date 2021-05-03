@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.nav`
-  background-color: var(--cyan);
+  background-color: var(--green-300);
   height: 4rem;
 
   width: 100%;

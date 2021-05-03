@@ -82,7 +82,7 @@ export const Header = styled.header`
   }
 
   span {
-    color: var(--cyan);
+    color: var(--green-300);
     font-size: 1.5rem;
     font-weight: 600;
   }

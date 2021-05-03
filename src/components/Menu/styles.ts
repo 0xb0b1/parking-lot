@@ -6,7 +6,7 @@ export const Container = styled.div`
 
   /* transform: translateX(0); */
 
-  background: var(--cyan);
+  background: var(--green-300);
 
   height: calc(100vh - 4rem);
   width: 100%;

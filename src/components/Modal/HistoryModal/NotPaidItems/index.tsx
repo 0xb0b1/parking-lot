@@ -1,5 +1,3 @@
-import { useHistory } from "../../../../hooks/useHistory";
-
 import NotPaidIcon from "../../../../images/icons/notpaid.svg";
 
 function NotPaidItems() {

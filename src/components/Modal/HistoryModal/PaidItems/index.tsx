@@ -1,5 +1,3 @@
-import { useHistory } from "../../../../hooks/useHistory";
-
 export function PaidItems() {
   // const { plate } = useHistory();
   const plate =

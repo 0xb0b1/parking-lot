@@ -6,8 +6,6 @@ import { Container, Content, Header } from "./styles";
 import NotPaidItems from "./NotPaidItems";
 import PaidItems from "./PaidItems";
 
-import BackIcon from "../../../images/Shape.png";
-
 import { FaArrowLeft } from "react-icons/fa";
 
 interface HistoryModalProps {

@@ -16,12 +16,10 @@ import { PaymentProvider } from "./hooks/usePayment";
 import { HistoryProvider } from "./hooks/useHistory";
 
 import { GlobalStyle } from "./styles/global";
-// import { api } from "./services/api";
 
 Modal.setAppElement("#root");
 
 function App() {
-  // hooks to open the modal
   const [isNewCheckoutModalOpen, setIsNewCheckoutModalOpen] = useState(false);
 
   const [
@@ -32,7 +30,6 @@ function App() {
   const { isFormValid } = useValidateInput();
 
   function handleOpenCheckoutModal() {
-    // if the plate number is valid, we open de modal.
     if (isFormValid) {
       setIsNewCheckoutModalOpen(true);
     }

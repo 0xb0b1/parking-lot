@@ -1,11 +1,9 @@
 // import { useEffect } from "react";
 import { useState } from "react";
-import { useHistory } from "../../hooks/useHistory";
-import { useValidateInput } from "../../hooks/useValidateInput";
 
 import Entrance from "../Form/Entrance";
 import Exit from "../Form/Exit";
-// import PlateHistory from "../PlateHistory";
+
 import { Container, Buttons, InputButton } from "./styles";
 
 interface DataInputProps {
@@ -19,22 +17,6 @@ function DataInput({
 }: DataInputProps) {
   // the input button type
   const [inputType, setInputType] = useState("entrada");
-
-  const { isFormValid, plateNumber } = useValidateInput();
-  const { handleFetchData } = useHistory();
-
-  // const [isHistoryOpen, setIsHistoryOpen] = useState(false);
-
-  function handleShowHistory() {
-    if (isFormValid) {
-      handleFetchData(plateNumber);
-      // setIsHistoryOpen(true);
-    }
-  }
-
-  // function handleCloseHistory() {
-  //   setIsHistoryOpen(false);
-  // }
 
   return (
     <Container>
@@ -60,7 +42,6 @@ function DataInput({
         <Exit
           checkoutPayment={onOpenCheckoutModal}
           completeCheckout={onOpenCheckoutCompleteModal}
-          showHistory={handleShowHistory}
         />
       )}
     </Container>

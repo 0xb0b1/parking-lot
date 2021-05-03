@@ -74,22 +74,49 @@ export const Form = styled.form`
       border: 1px solid #dadada;
 
       margin-top: 2rem;
+
+      cursor: not-allowed;
+
+      &.active {
+        color: var(--green-300);
+        border: 2px solid rgba(20, 204, 124, 0.3);
+        cursor: pointer;
+      }
     }
   }
 `;
 
 export const HistoryButton = styled.div`
-  span {
+  margin: 2rem 1rem;
+  height: 4rem;
+  border-radius: 0.25rem;
+
+  button {
     padding: 2rem 1rem;
 
+    width: 100%;
+    height: 2.5rem;
+
+    border-radius: 0.25rem;
+
     margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     cursor: pointer;
 
     font: 600 0.93rem "Open Sans", sans-serif;
     text-transform: uppercase;
 
-    display: flex;
-    justify-content: center;
+    color: transparent;
+    background: none;
+
+    &.active {
+      color: #fff;
+      background: var(--green-300);
+      border: 1px solid rgba(20, 204, 124, 0.3);
+    }
   }
 `;

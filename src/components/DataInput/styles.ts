@@ -26,9 +26,11 @@ export const InputButton = styled.button<InputButtonProps>`
   width: 100%;
   height: 3.4rem;
 
-  border-bottom: ${(props) => (props.isActive ? `2px solid var(--cyan)` : "")};
+  border-bottom: ${(props) =>
+    props.isActive ? `2px solid var(--green-300)` : ""};
 
   background: ${(props) => (props.isActive ? "#FFF" : "")};
 
-  color: ${(props) => (props.isActive ? `var(--cyan)` : `var(--gray-300)`)};
+  color: ${(props) =>
+    props.isActive ? `var(--green-300)` : `var(--gray-300)`};
 `;

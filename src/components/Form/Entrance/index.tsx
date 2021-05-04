@@ -17,7 +17,6 @@ function Entrance() {
         />
       </label>
       <button
-        // onClick={handleConfirmCheckin}
         type="button"
         className={isFormValid ? "entrada active" : "entrada disabled"}
       >

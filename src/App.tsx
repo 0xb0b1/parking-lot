@@ -14,7 +14,6 @@ import HistoryModal from "./components/Modal/HistoryModal";
 import { OpenMenuProvider } from "./hooks/useOpenMenu";
 import { useValidateInput } from "./hooks/useValidateInput";
 import { PaymentProvider } from "./hooks/usePayment";
-import { HistoryProvider } from "./hooks/useHistory";
 
 import { GlobalStyle } from "./styles/global";
 

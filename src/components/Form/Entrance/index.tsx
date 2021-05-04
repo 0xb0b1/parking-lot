@@ -4,12 +4,6 @@ import { Form } from "../styles";
 function Entrance() {
   const { plateNumber, isFormValid, handleSetPlateNumber } = useValidateInput();
 
-  async function handleConfirmCheckin() {
-    if (isFormValid) {
-      // const data = localStorage.setItem("Plates", JSON.stringify(plateNumber))
-    }
-  }
-
   return (
     <Form>
       <label>

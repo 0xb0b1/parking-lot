@@ -33,21 +33,15 @@ function App() {
   const { isFormValid } = useValidateInput();
 
   function handleOpenCheckoutModal() {
-    if (isFormValid) {
-      setIsNewCheckoutModalOpen(true);
-    }
+    isFormValid && setIsNewCheckoutModalOpen(true);
   }
 
   function handleOpenCheckoutCompleteModal() {
-    if (isFormValid) {
-      setIsNewCheckoutCompleteModalOpen(true);
-    }
+    isFormValid && setIsNewCheckoutCompleteModalOpen(true);
   }
 
   function handleOpenHistoryModal() {
-    if (isFormValid) {
-      setIsNewHistoryModalOpen(true);
-    }
+    isFormValid && setIsNewHistoryModalOpen(true);
   }
 
   return (

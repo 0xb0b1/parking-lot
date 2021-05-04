@@ -13,7 +13,7 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
 
@@ -24,8 +24,8 @@ export const Content = styled.div`
     align-items: center;
     justify-content: space-between;
 
-    width: 19.35rem;
-    height: 4rem;
+    width: 20rem;
+    height: 5rem;
 
     cursor: pointer;
 
@@ -33,13 +33,12 @@ export const Content = styled.div`
     padding: 1.2rem;
 
     border-radius: 0.5rem;
-    box-sizing: border-box;
     box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.2);
 
     transition: transform 0.2s;
 
     &:hover {
-      transform: scale(1.2);
+      transform: scale(1.04);
     }
 
     div > span:first-child {
@@ -80,17 +79,17 @@ export const Header = styled.header`
   svg {
     font-size: 1.85rem;
 
-    margin: 0.45rem;
+    margin: 0.45rem auto;
     padding-right: 0.45rem;
 
     color: var(--green-300);
   }
 
   span {
-    margin: 0.45rem auto;
+    margin: 0 auto;
 
     color: var(--green-300);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 600;
   }
 `;

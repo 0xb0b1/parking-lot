@@ -16,7 +16,6 @@ function Exit({ checkoutPayment, completeCheckout, showHistory }: ExitProps) {
         Número da placa:
         <input
           type="text"
-          max="8"
           pattern="^([A-Za-z]{3})-[0-9]{4}$"
           placeholder="AAA-0000"
           value={plateNumber}

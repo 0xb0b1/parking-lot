@@ -7,6 +7,8 @@ import { Form, Button } from "./styles";
 function Entrance() {
   const { plateNumber, isFormValid, handleSetPlateNumber } = useValidateInput();
 
+  // later I'll use context api to push data to localStorage or
+  // an API and save it.
   const [checkinCompleted, setCheckinCompleted] = useState(false);
 
   function handleCompleteCheckin(event: FormEvent) {

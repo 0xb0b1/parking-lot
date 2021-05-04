@@ -7,6 +7,8 @@ export const GlobalStyle = createGlobalStyle`
     
     --orange: #F1B147;
 
+    --red-btn: #BB5252;
+
     --green-100: #0E8A54;
     --green-300: #11CC7C;
     --green-500: #48DD90;

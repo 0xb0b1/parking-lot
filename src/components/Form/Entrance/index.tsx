@@ -1,8 +1,19 @@
+import { FormEvent } from "react";
+import { useState } from "react";
 import { useValidateInput } from "../../../hooks/useValidateInput";
-import { Form } from "../styles";
+
+import { Form, Button } from "./styles";
 
 function Entrance() {
   const { plateNumber, isFormValid, handleSetPlateNumber } = useValidateInput();
+
+  const [checkinCompleted, setCheckinCompleted] = useState(false);
+
+  function handleCompleteCheckin(event: FormEvent) {
+    event.preventDefault();
+
+    setCheckinCompleted(true);
+  }
 
   return (
     <Form>
@@ -16,12 +27,16 @@ function Entrance() {
           onChange={(event) => handleSetPlateNumber(event.target.value)}
         />
       </label>
-      <button
+      <Button
+        isActive={checkinCompleted}
         type="button"
         className={isFormValid ? "entrada active" : "entrada disabled"}
+        onClick={handleCompleteCheckin}
       >
-        CONFIRMAR ENTRADA
-      </button>
+        {checkinCompleted && isFormValid
+          ? "ENTRADA CONCLÚIDA"
+          : "CONFIRMAR ENTRADA"}
+      </Button>
     </Form>
   );
 }

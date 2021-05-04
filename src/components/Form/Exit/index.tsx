@@ -1,5 +1,5 @@
 import { useValidateInput } from "../../../hooks/useValidateInput";
-import { Form, HistoryButton } from "../styles";
+import { Form, HistoryButton } from "./styles";
 
 interface ExitProps {
   checkoutPayment: () => void;

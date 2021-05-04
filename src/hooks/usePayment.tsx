@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { createContext, ReactNode, useState } from "react";
-import { api } from "../services/api";
 import { useValidateInput } from "./useValidateInput";
 interface PaymentProviderProps {
   children: ReactNode;
@@ -22,7 +21,6 @@ export function PaymentProvider({ children }: PaymentProviderProps) {
 
   async function handlePayment(plate: string) {
     if (isFormValid) {
-      await api.post(`${plate}/pay`);
       setIsPaymentComplete(true);
     }
   }

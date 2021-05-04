@@ -7,8 +7,6 @@ import LoadingImg from "../../../images/icons/loading.svg";
 import RegisteredImg from "../../../images/icons/round-done-button.svg";
 
 import { Container, ConfirmButton, ExitButton } from "../styles";
-// import { usePayment } from "../../../hooks/usePayment";
-import { api } from "../../../services/api";
 
 interface CheckoutPaymentModalProps {
   isOpen: boolean;
@@ -21,17 +19,11 @@ function CheckoutCompleteModal({
 }: CheckoutPaymentModalProps) {
   const { plateNumber, isFormValid } = useValidateInput();
 
-  // const [activeModal, setActiveModal] = useState("checkoutStart");
-
   async function handleCompleteCheckout(event: FormEvent) {
     event.preventDefault();
 
-    // setPaymentCompleted(false);
-    // setActiveModal("checkout");
-
-    // liberar a saída do veiculo
     if (isFormValid) {
-      await api.post(`${plateNumber}/out`);
+      // await api.post(`${plateNumber}/out`);
     }
   }
 

@@ -4,8 +4,6 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
 
-  /* padding-bottom: 1rem; */
-
   font: normal 1.25rem "Open Sans", sans-serif;
 
   label {
@@ -34,7 +32,6 @@ export const Form = styled.form`
 
       &::placeholder {
         font-weight: 400;
-        /* font-size: 1.4rem; */
         color: var(--gray-300);
       }
     }
@@ -59,11 +56,6 @@ export const Form = styled.form`
 
     &.entrada {
       margin-bottom: 3rem;
-    }
-
-    &.active {
-      color: var(--white);
-      background: var(--green-300);
     }
 
     &.disabled {

@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useValidateInput } from "../../../hooks/useValidateInput";
 import { Form } from "../styles";
 
@@ -7,17 +6,7 @@ function Entrance() {
 
   async function handleConfirmCheckin() {
     if (isFormValid) {
-      // post request when clicked in "Confirmar Entrada"
-      try {
-        axios({
-          method: "post",
-          url: "https://parking-lot-to-pfz.herokuapp.com/parking",
-          data: { plate: plateNumber },
-          headers: { "Content-Type": "application/json" },
-        }).then((response) => response.data);
-      } catch (err) {
-        console.error(err);
-      }
+      // const data = localStorage.setItem("Plates", JSON.stringify(plateNumber))
     }
   }
 
@@ -34,7 +23,7 @@ function Entrance() {
         />
       </label>
       <button
-        onClick={handleConfirmCheckin}
+        // onClick={handleConfirmCheckin}
         type="button"
         className={isFormValid ? "entrada active" : "entrada disabled"}
       >

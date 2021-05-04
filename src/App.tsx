@@ -47,32 +47,32 @@ function App() {
   return (
     <OpenMenuProvider>
       <PaymentProvider>
-        <HistoryProvider>
-          <GlobalStyle />
+        <GlobalStyle />
 
-          <NavBar />
-          <Menu />
+        <NavBar />
 
-          <DataInput
-            onOpenCheckoutModal={handleOpenCheckoutModal}
-            onOpenCheckoutCompleteModal={handleOpenCheckoutCompleteModal}
-            onOpenHistoryModal={handleOpenHistoryModal}
-          />
+        <Menu />
 
-          <CheckoutPaymentModal
-            isOpen={isNewCheckoutModalOpen}
-            onRequestClose={() => setIsNewCheckoutModalOpen(false)}
-          />
-          <CheckoutCompleteModal
-            isOpen={isNewCheckoutCompleteModalOpen}
-            onRequestClose={() => setIsNewCheckoutCompleteModalOpen(false)}
-          />
+        <DataInput
+          onOpenCheckoutModal={handleOpenCheckoutModal}
+          onOpenCheckoutCompleteModal={handleOpenCheckoutCompleteModal}
+          onOpenHistoryModal={handleOpenHistoryModal}
+        />
 
-          <HistoryModal
-            isOpen={isNewHistoryModalOpen}
-            onRequestClose={() => setIsNewHistoryModalOpen(false)}
-          />
-        </HistoryProvider>
+        <CheckoutPaymentModal
+          isOpen={isNewCheckoutModalOpen}
+          onRequestClose={() => setIsNewCheckoutModalOpen(false)}
+        />
+
+        <CheckoutCompleteModal
+          isOpen={isNewCheckoutCompleteModalOpen}
+          onRequestClose={() => setIsNewCheckoutCompleteModalOpen(false)}
+        />
+
+        <HistoryModal
+          isOpen={isNewHistoryModalOpen}
+          onRequestClose={() => setIsNewHistoryModalOpen(false)}
+        />
       </PaymentProvider>
     </OpenMenuProvider>
   );

@@ -37,6 +37,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     background: var(--background);
+    height: 100vh;
   }
 
   body, input, textarea, button {

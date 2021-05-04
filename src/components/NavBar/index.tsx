@@ -1,5 +1,3 @@
-// import { useState } from "react";
-
 import { FaAlignRight } from "react-icons/fa";
 import { FiX } from "react-icons/fi";
 

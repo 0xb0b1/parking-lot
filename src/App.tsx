@@ -28,7 +28,7 @@ function App() {
     setIsNewCheckoutCompleteModalOpen,
   ] = useState(false);
 
-  const [isNewHistoryModalOpen, setIsnewHistoryModalOpen] = useState(false);
+  const [isNewHistoryModalOpen, setIsNewHistoryModalOpen] = useState(false);
 
   const { isFormValid } = useValidateInput();
 
@@ -38,28 +38,16 @@ function App() {
     }
   }
 
-  function handleCloseCheckoutModal() {
-    setIsNewCheckoutModalOpen(false);
-  }
-
   function handleOpenCheckoutCompleteModal() {
     if (isFormValid) {
       setIsNewCheckoutCompleteModalOpen(true);
     }
   }
 
-  function handleCloseCheckoutCompleteModal() {
-    setIsNewCheckoutCompleteModalOpen(false);
-  }
-
   function handleOpenHistoryModal() {
     if (isFormValid) {
-      setIsnewHistoryModalOpen(true);
+      setIsNewHistoryModalOpen(true);
     }
-  }
-
-  function handleCloseHistoryModal() {
-    setIsnewHistoryModalOpen(false);
   }
 
   return (
@@ -79,16 +67,16 @@ function App() {
 
           <CheckoutPaymentModal
             isOpen={isNewCheckoutModalOpen}
-            onRequestClose={handleCloseCheckoutModal}
+            onRequestClose={() => setIsNewCheckoutModalOpen(false)}
           />
           <CheckoutCompleteModal
             isOpen={isNewCheckoutCompleteModalOpen}
-            onRequestClose={handleCloseCheckoutCompleteModal}
+            onRequestClose={() => setIsNewCheckoutCompleteModalOpen(false)}
           />
 
           <HistoryModal
             isOpen={isNewHistoryModalOpen}
-            onRequestClose={handleCloseHistoryModal}
+            onRequestClose={() => setIsNewHistoryModalOpen(false)}
           />
         </HistoryProvider>
       </PaymentProvider>

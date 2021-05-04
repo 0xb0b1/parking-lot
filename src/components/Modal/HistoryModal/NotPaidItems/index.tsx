@@ -192,8 +192,8 @@ function NotPaidItems() {
     <>
       {plate
         .filter((paid) => paid.paid !== true)
-        .map((item) => (
-          <div className="box">
+        .map((item, index) => (
+          <div key={index} className="box">
             <div className="time">
               <span>TEMPO ATUAL</span>
               <span>{item.time}</span>

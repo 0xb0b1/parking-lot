@@ -189,8 +189,8 @@ export function PaidItems() {
     <>
       {plate
         .filter((paid) => paid.paid === true)
-        .map((item) => (
-          <div className="box">
+        .map((item, index) => (
+          <div key={index} className="box">
             <div className="time">
               <span>TEMPO TOTAL</span>
               <span>{item.time}</span>
